@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashwin Chhimpa</title>
+</head>
+
+<body class="p-6">
+  <!-- Add this at the top of your <body> -->
+
+  <main class="w-full h-full relative overflow-y-scroll rounded-2xl main overflow-x-hidden! ">
+    <div id="loader" class="absolute  z-[999]  flex flex-row justify-center items-center pb-2 w-full h-full 
+       bg-[#272626] ">
+      <span id="loader-text"
+        class=" text-[5vw] text-[#e0dbdb] mix-blend-difference! inline-block font-[soria]! capitalize tracking-tight">Loading
+        0%</span>
+    </div>
+
+    <!-- Hero Section -->
+    <nav
+      class="fixed top-[11%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-[99] min-w-[60vw] max-w-[40vw] text-white flex flex-row justify-between items-center pb-2 ">
+
+      <ul
+        class="nav-list-items text-[1.1em] font-[200]   flex flex-row justify-center items-center gap-5 uppercase mix-blend-difference! w-full text-amber-100 ">
+        <li class=" flex flex-col min-h-[1rem] w-fit px-1 overflow-hidden link-text">
+          <a href="#first-sec" class="p-1  inline-block scroll-link   ">Home</a>
+        </li>
+        <li class=" flex flex-col min-h-[1rem] w-fit px-1 overflow-hidden link-text">
+          <a href="#skills" class="p-1  inline-block scroll-link   ">Skills</a>
+        </li>
+
+        <li class=" flex flex-col min-h-[1rem] w-fit px-1 overflow-hidden link-text">
+          <a href="#about" class="p-1  inline-block scroll-link ">About</a>
+        </li>
+        <li class=" flex flex-col min-h-[1rem] w-fit px-1 overflow-hidden link-text">
+          <a href="#projects" class="p-1  inline-block scroll-link ">Projects</a>
+        </li>
+        <li class=" flex flex-col min-h-[1rem] w-fit px-1 overflow-hidden link-text">
+          <a href="#contact" class="p-1  inline-block scroll-link ">Connect </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="first-sec"
+      class="relative z-[2] w-full min-h-full max-h-auto bg-[#171717] overflow-hidden flex flex-col justify-center items-center ">
+
+      <!-- Canvas Background -->
+      <canvas id="as_a_canvas" class="absolute inset-0 z-10!"></canvas>
+
+      <!-- Hero Text -->
+      <div
+        class="text-box  text-amber-50! absolute top-0 z-10 flex flex-col items-start justify-end  pointer-events-none select-none w-full  h-full overflow-hidden  px-[2vw] pb-[5vw] gap-[0.2vw]">
+        <h1
+          class="overflow-hidden text-[7vw] font-[600]  select-none capitalize flex flex-col justify-center items-start  relative  ">
+          <span class="spliting_text   gradient-text mr-3 text-[6vw] font-[600]  leading-[1em] z-[0]!"
+            id="first_heading_span_text">
+            ashwin chhimpa
+          </span>
+          <span class="spliting_text  gradient-text leading-[1em] " id="second_heading_span_text">
+            front end Developer
+          </span>
+        </h1>
+        <p id="first_para_span_text"
+          class="spliting_text text-[3vw] max-w-fit  min-w-[28em]   leading-[1em]  font-[100] select-none capitalize   relative!  overflow-hidden tracking-tighter text-[#fff]! ">
+          Where geometry, light, and interactivity collide—welcome to my universe.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="skills"
+      class="min-h-full max-h-auto  relative z-[2] w-full  bg-[#d8cfcf] overflow-hidden flex flex-col justify-center items-start ">
+      <canvas id="as_a_canvas_two" class="absolute inset-0 z-0  "></canvas>
+      <!-- Skills Section Container -->
+      <div id="sec_two_skills_container"
+        class="relative w-full h-full p-10  flex flex-row justify-start items-center pointer-events-none z-50 ">
+
+        <div class="absolute w-1/2 h-full  flex flex-col justify-center items-center ">
+          <!-- Single Skill Box -->
+          <article data-skill="skill_0"
+            class="absolute  left-0 text-amber-50!  p-4 flex flex-col items-start  rounded-xl shadow-lg pointer-events-none  ">
+            <header class="mb-6 ">
+              <h2 class="text-[4vw] font-bold uppercase border-b-2 leading-[1.2em]  border-blue-400!  skills-heading">
+                React
+              </h2>
+            </header>
+            <p class="text-[2vw] leading-[1em]  tracking-tight skills font-[100]! capitalize ">
+              I build dynamic, high-performance interfaces with React, focusing on fast rendering, state management, and
+              a
+              seamless user experience.
+            </p>
+          </article>
+
+          <article data-skill="skill_1"
+            class="absolute  left-0 text-amber-50!  p-4 flex flex-col items-start  rounded-xl shadow-lg pointer-events-none  ">
+            <header class="mb-6 overflow-hidden ">
+              <h2 class="text-[4vw]  font-bold uppercase border-b-2 leading-[1.2em]  border-yellow-100! skills-heading">
+                ThreeJS
+              </h2>
+            </header>
+            <p class="text-[2vw] leading-[1em]  tracking-tight  skills font-[100]! capitalize ">
+              I use Three.js to craft immersive 3D visuals and interactive web experiences, making websites more
+              engaging
+              and memorable.
+
+            </p>
+          </article>
+
+          <article data-skill="skill_2"
+            class="absolute  left-0 text-amber-50!  p-4 flex flex-col items-start  rounded-xl shadow-lg pointer-events-none  ">
+            <header class="mb-6 ">
+              <h2 class="text-[2.3vw] font-bold uppercase border-b-2 leading-[1.4em]  border-amber-200! skills-heading">
+                Greensock Animtion platform (GSAP)
+              </h2>
+            </header>
+            <p class="text-[1.8vw] leading-[1.2em] tracking-tight  skills font-[100] capitalize  w-[100%]">
+              With GSAP, I create smooth, high-performance animations that bring interfaces and 3D scenes to life,
+              enhancing user engagement.
+
+            </p>
+          </article>
+
+          <article data-skill="skill_3"
+            class="absolute  left-0 text-amber-50!  p-4 flex flex-col items-start  rounded-xl shadow-lg pointer-events-none  ">
+            <header class="mb-6 ">
+              <h2
+                class="text-[4vw] font-bold uppercase border-b-2 leading-[1.4em]  border-amber-400! skills-heading pr-4">
+                Javascript
+              </h2>
+            </header>
+            <p class="text-[2vw] leading-[1.2em] tracking-tight  skills font-[100]! capitalize ">
+              JavaScript is my backbone for web development, enabling interactivity, modern features, and efficient
+              workflows across all my works.
+            </p>
+          </article>
+
+          <article data-skill="skill_4"
+            class="absolute  left-0 text-amber-50!  p-4 flex flex-col items-start  rounded-xl shadow-lg pointer-events-none  ">
+            <header class="mb-6 ">
+              <h2
+                class="text-[4vw] font-bold uppercase border-b-2 leading-[1.2em]  border-purple-500! pr-4 skills-heading">
+                redux
+              </h2>
+            </header>
+            <p class="text-[2vw] leading-[1em] tracking-tight  skills font-[100]! capitalize ">
+              Redux helps me manage complex app state with ease, ensuring predictable data flow and scalable application
+              architecture.
+
+            </p>
+          </article>
+
+          <article data-skill="skill_5"
+            class="absolute  left-0 text-amber-50!  p-4 flex flex-col items-start  rounded-xl shadow-lg pointer-events-none  ">
+            <header class="mb-6 ">
+
+              <h2
+                class="text-[4vw] font-bold uppercase border-b-2 leading-[1.2em]  border-purple-700! pr-4 pl-2 skills-heading">
+                Axios
+              </h2>
+            </header>
+            <p class="text-[2vw] leading-[1.2em] tracking-tight skills font-[100]! capitalize ">
+              I use Axios to handle efficient and reliable API requests, keeping apps dynamic, data-driven, and easy to
+              maintain.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <sectiom id="about" class="relative z-[2] w-full min-h-full max-h-auto bg-[#0b0b0b] overflow-hidden   select-none">
+
+      <div class=" w-full h-full relative images-container bg-[#0b0b0b] ">
+
+        <div class="h-full w-full  image-one about_images absolute about-boxes">
+
+          <img src="./statics/images/about-images/mountains.jpg" alt="" class="object-cover absolute h-full w-full z-0">
+          <div class="absolute  z-10 w-full h-full  flex items-center justify-center mix-blend-difference">
+            <p
+              class="   font-[600] about-text  uppercase bg-gradient-to-r from-[#ffffff] via-[#ffffff] to-[#ffffff] bg-clip-text text-transparent ">
+              Turning complex
+              landscapes of ideas into
+              user-friendly design.
+            </p>
+          </div>
+          <p
+            class="uppercase absolute z-10 text-[4vw] bottom-0 right-0 font-[soria]! text-white mix-blend-difference px-10">
+            About me</p>
+        </div>
+
+        <div class="h-full w-full  image-two absolute about_images  about-boxes clip-pathing">
+          <img src="./statics/images/about-images/wallwater.jpg" alt="" class="object-cover absolute h-full w-full z-0">
+          <div class="absolute z-10 w-full h-full flex items-center justify-center mix-blend-difference">
+            <p
+              class=" text-[8.5vw]!  font-[600] about-text  bg-gradient-to-r from-[#ffffff] via-[#fffefe] to-[#ffffff] bg-clip-text text-transparent uppercase">
+              Every line of code takes me closer to the light.
+            </p>
+          </div>
+          <p
+            class="uppercase absolute z-10 text-[4vw] bottom-0 right-0 font-[soria]! text-white mix-blend-difference px-10">
+            About me</p>
+        </div>
+
+        <div class="h-full w-full  image-three about_images absolute  about-boxes clip-pathing">
+          <img src="./statics/images/about-images/snowTree.jpg" alt="" class="object-cover absolute h-full w-full z-0">
+          <div class="absolute  z-10 w-full h-full flex items-center justify-center mix-blend-difference">
+            <p
+              class="bg-gradient-to-r from-[#737373] via-[#ffffff] to-[#f9f9f9] bg-clip-text text-transparent text-[2vw]   font-[600] about-text uppercase">
+              In a world of blank canvases, I stand tall as the code that brings design to life.</p>
+          </div>
+          <p
+            class="uppercase absolute z-10 text-[4vw] bottom-0 right-0 font-[soria]! text-white mix-blend-difference px-10">
+            About me</p>
+        </div>
+
+      </div>
+
+    </sectiom>
+
+    <section id="projects" class="w-full  min-h-full max-h-auto overflow-hidden relative bg-red-500">
+      <div id="projects-container">
+        <h1>Added Soon</h1>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/gsapanimation.js"></script>
+
+</body>
+
+</html>
