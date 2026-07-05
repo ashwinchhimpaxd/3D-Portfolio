@@ -52,13 +52,28 @@ loadingManager.onLoad = function () {
     tryHideLoader();
 };
 
-// 4. Listen for window.onload (all images, scripts, etc.)
-window.onload = function () {
+loadingManager.onError = function (url) {
+    console.warn('Three.js LoadingManager error loading asset:', url);
+    // Proceed anyway to avoid locking the loader screen
+    loadedPercent = 100;
+    document.getElementById('loader-text').textContent = `Loading 100%`;
+    threeReady = true;
+    tryHideLoader();
+};
+
+// 4. Listen for window load (all images, scripts, etc.)
+function handleWindowLoad() {
     document.getElementById('loader-text').innerText = `Loading 100%`;
     htmlReady = true;
     tryHideLoader();
     TextSpliting("spliting_text", ["gradient-text", "uni-span", "inline-block", "bor", "leading-[1.1em]"]);
-};
+}
+
+if (document.readyState === 'complete') {
+    handleWindowLoad();
+} else {
+    window.addEventListener('load', handleWindowLoad);
+}
 let positionAnimtion = null; // Declare outside
 let introTextanimation = null;
 function first_section_canvas_scene() {
@@ -264,11 +279,11 @@ function first_section_canvas_scene() {
         verticalOffset: 0,
         rotateLetters: false
     };
-    const textGroupParams = {
-        position: { x: 0, y: 0, z: 6 },
-        scale: { x: 2, y: 2, z: 2 },
-        rotation: { x: -0.26, y: Math.PI * 4, z: 0 }
-    };
+    // const textGroupParams = {
+    //     position: { x: 0, y: 0, z: 6 },
+    //     scale: { x: 2, y: 2, z: 2 },
+    //     rotation: { x: -0.26, y: Math.PI * 4, z: 0 }
+    // };
 
 
 
@@ -364,7 +379,6 @@ function first_section_canvas_scene() {
                 ease: "expo.out"
             });
             lastHoveredMesh = [];
-
         }
     });
 }
@@ -425,63 +439,63 @@ function second_section_canvas_scene() {
     directlight.position.set(LightCtrlObj.directlight.x, LightCtrlObj.directlight.y, LightCtrlObj.directlight.z);
     scene.add(directlight);
     // --- Add GUI for Point Light here (at line 631) ---
-    const gui = new GUI();
-    gui.close()
-    {
-        const pointFolder = gui.addFolder('Point Light');
-        pointFolder.addColor(LightCtrlObj.pointLight, 'color').name('Color').onChange(val => {
-            pointlight.color.set(val);
-        });
-        pointFolder.add(LightCtrlObj.pointLight, 'intensity', 0, 20, 0.01).name('Intensity').onChange(val => {
-            pointlight.intensity = val;
-        });
-        pointFolder.add(LightCtrlObj.pointLight, 'x', -50, 50, 0.1).name('Position X').onChange(val => {
-            pointlight.position.x = val;
-        });
-        pointFolder.add(LightCtrlObj.pointLight, 'y', -50, 50, 0.1).name('Position Y').onChange(val => {
-            pointlight.position.y = val;
-        });
-        pointFolder.add(LightCtrlObj.pointLight, 'z', -50, 50, 0.1).name('Position Z').onChange(val => {
-            pointlight.position.z = val;
-        });
-        pointFolder.add(LightCtrlObj.pointLight, 'distance', 0, 200, 1).name('Distance').onChange(val => {
-            pointlight.distance = val;
-        });
-        pointFolder.add(LightCtrlObj.pointLight, 'decay', 0, 5, 0.01).name('Decay').onChange(val => {
-            pointlight.decay = val;
-        });
-        pointFolder.close();
+    // const gui = new GUI();
+    // gui.close()
+    // {
+    //     const pointFolder = gui.addFolder('Point Light');
+    //     pointFolder.addColor(LightCtrlObj.pointLight, 'color').name('Color').onChange(val => {
+    //         pointlight.color.set(val);
+    //     });
+    //     pointFolder.add(LightCtrlObj.pointLight, 'intensity', 0, 20, 0.01).name('Intensity').onChange(val => {
+    //         pointlight.intensity = val;
+    //     });
+    //     pointFolder.add(LightCtrlObj.pointLight, 'x', -50, 50, 0.1).name('Position X').onChange(val => {
+    //         pointlight.position.x = val;
+    //     });
+    //     pointFolder.add(LightCtrlObj.pointLight, 'y', -50, 50, 0.1).name('Position Y').onChange(val => {
+    //         pointlight.position.y = val;
+    //     });
+    //     pointFolder.add(LightCtrlObj.pointLight, 'z', -50, 50, 0.1).name('Position Z').onChange(val => {
+    //         pointlight.position.z = val;
+    //     });
+    //     pointFolder.add(LightCtrlObj.pointLight, 'distance', 0, 200, 1).name('Distance').onChange(val => {
+    //         pointlight.distance = val;
+    //     });
+    //     pointFolder.add(LightCtrlObj.pointLight, 'decay', 0, 5, 0.01).name('Decay').onChange(val => {
+    //         pointlight.decay = val;
+    //     });
+    //     pointFolder.close();
 
-        const directlightfolder = gui.addFolder('Directional Light');
-        directlightfolder.close();
-        directlightfolder.addColor(LightCtrlObj.directlight, 'color').name('Color').onChange(val => {
-            directlight.color.set(val);
-        });
-        directlightfolder.add(LightCtrlObj.directlight, 'intensity', 0, 20, 0.01).name('Intensity').onChange(val => {
-            directlight.intensity = val;
-        });
-        directlightfolder.add(LightCtrlObj.directlight, 'x', -50, 50, 0.1).name('Position X').onChange(val => {
-            directlight.position.x = val;
-        });
-        directlightfolder.add(LightCtrlObj.directlight, 'y', -50, 50, 0.1).name('Position Y').onChange(val => {
-            directlight.position.y = val;
-        });
-        directlightfolder.add(LightCtrlObj.directlight, 'z', -50, 50, 0.1).name('Position Z').onChange(val => {
-            directlight.position.z = val;
-        });
+    //     const directlightfolder = gui.addFolder('Directional Light');
+    //     directlightfolder.close();
+    //     directlightfolder.addColor(LightCtrlObj.directlight, 'color').name('Color').onChange(val => {
+    //         directlight.color.set(val);
+    //     });
+    //     directlightfolder.add(LightCtrlObj.directlight, 'intensity', 0, 20, 0.01).name('Intensity').onChange(val => {
+    //         directlight.intensity = val;
+    //     });
+    //     directlightfolder.add(LightCtrlObj.directlight, 'x', -50, 50, 0.1).name('Position X').onChange(val => {
+    //         directlight.position.x = val;
+    //     });
+    //     directlightfolder.add(LightCtrlObj.directlight, 'y', -50, 50, 0.1).name('Position Y').onChange(val => {
+    //         directlight.position.y = val;
+    //     });
+    //     directlightfolder.add(LightCtrlObj.directlight, 'z', -50, 50, 0.1).name('Position Z').onChange(val => {
+    //         directlight.position.z = val;
+    //     });
 
-        directlightfolder.add(LightCtrlObj.directlight, 'tarX', -50, 50, 0.1).name('Target X').onChange(val => {
-            directlight.target.position.x = val;
+    //     directlightfolder.add(LightCtrlObj.directlight, 'tarX', -50, 50, 0.1).name('Target X').onChange(val => {
+    //         directlight.target.position.x = val;
 
-        })
-        directlightfolder.add(LightCtrlObj.directlight, 'tarY', -50, 50, 0.1).name('Target Y').onChange(val => {
-            directlight.target.position.y = val;
-        })
-        directlightfolder.add(LightCtrlObj.directlight, 'tarZ', -50, 50, 0.1).name('Target Z').onChange(val => {
-            directlight.target.position.z = val;
-        })
+    //     })
+    //     directlightfolder.add(LightCtrlObj.directlight, 'tarY', -50, 50, 0.1).name('Target Y').onChange(val => {
+    //         directlight.target.position.y = val;
+    //     })
+    //     directlightfolder.add(LightCtrlObj.directlight, 'tarZ', -50, 50, 0.1).name('Target Z').onChange(val => {
+    //         directlight.target.position.z = val;
+    //     })
 
-    }
+    // }
 
     function getVisibleBoundsAtZ(z, camera) {
         // Calculate visible width/height at a given Z in world units
@@ -630,67 +644,67 @@ function second_section_canvas_scene() {
     planeGroup.rotation.set(planeGroupData.rotationX, planeGroupData.rotationY, planeGroupData.rotationZ);
     planeGroup.position.set(planeGroupData.positionX, planeGroupData.positionY, planeGroupData.positionZ);
     scene.add(planeGroup);
-    {
+    // {
 
-        gui.add(planeGroupData, 'radius', 0, 10).name('Radius').onChange((value) => {
-            // Update the position of each plane based on new radius
-            for (let i = 0; i < planeGroupData.planeCount; i++) {
-                const angle = (i / planeGroupData.planeCount) * Math.PI * 2;
-                const x = Math.cos(angle) * value;
-                const z = Math.sin(angle) * value;
-                planeMeshes[i].position.set(x, 0, z);
-                // planeMeshes[i].lookAt(0, 0, 0);
-            }
-        });
+    //     gui.add(planeGroupData, 'radius', 0, 10).name('Radius').onChange((value) => {
+    //         // Update the position of each plane based on new radius
+    //         for (let i = 0; i < planeGroupData.planeCount; i++) {
+    //             const angle = (i / planeGroupData.planeCount) * Math.PI * 2;
+    //             const x = Math.cos(angle) * value;
+    //             const z = Math.sin(angle) * value;
+    //             planeMeshes[i].position.set(x, 0, z);
+    //             // planeMeshes[i].lookAt(0, 0, 0);
+    //         }
+    //     });
 
-        //offset 
-        for (let i = 0; i < planeGroupData.planeCount; i++) {
+    //     //offset 
+    //     for (let i = 0; i < planeGroupData.planeCount; i++) {
 
-            const texFolder = gui.addFolder(`Plane ${i + 1} Texture`);
-            texFolder.add(textureCrop[i], 'textureoffset_one', -1, 1).name('Texture Offset One').onChange((value) => {
-                texture[i].offset.set(value, textureCrop[i].textureoffset_two);
-            });
-            texFolder.add(textureCrop[i], 'textureoffset_two', -1, 1).name('Texture Offset Two').onChange((value) => {
-                texture[i].offset.set(textureCrop[i].textureoffset_one, value);
-            });
-            texFolder.add(textureCrop[i], 'texturerepeat_one', -1, 1).name('Texture Repeat One').onChange((value) => {
-                texture[i].repeat.set(value, textureCrop[i].texturerepeat_two);
-            });
-            texFolder.add(textureCrop[i], 'texturerepeat_two', -1, 1).name('Texture Repeat Two').onChange((value) => {
-                texture[i].repeat.set(textureCrop[i].texturerepeat_one, value);
-            });
-            texFolder.close();
-        }
+    //         const texFolder = gui.addFolder(`Plane ${i + 1} Texture`);
+    //         texFolder.add(textureCrop[i], 'textureoffset_one', -1, 1).name('Texture Offset One').onChange((value) => {
+    //             texture[i].offset.set(value, textureCrop[i].textureoffset_two);
+    //         });
+    //         texFolder.add(textureCrop[i], 'textureoffset_two', -1, 1).name('Texture Offset Two').onChange((value) => {
+    //             texture[i].offset.set(textureCrop[i].textureoffset_one, value);
+    //         });
+    //         texFolder.add(textureCrop[i], 'texturerepeat_one', -1, 1).name('Texture Repeat One').onChange((value) => {
+    //             texture[i].repeat.set(value, textureCrop[i].texturerepeat_two);
+    //         });
+    //         texFolder.add(textureCrop[i], 'texturerepeat_two', -1, 1).name('Texture Repeat Two').onChange((value) => {
+    //             texture[i].repeat.set(textureCrop[i].texturerepeat_one, value);
+    //         });
+    //         texFolder.close();
+    //     }
 
-        // Position X
-        gui.add(planeGroupData, 'positionX', -10, 10).name('Group X').onChange((value) => {
-            planeGroup.position.x = value;
-        });
+    //     // Position X
+    //     gui.add(planeGroupData, 'positionX', -10, 10).name('Group X').onChange((value) => {
+    //         planeGroup.position.x = value;
+    //     });
 
-        // Position Y
-        gui.add(planeGroupData, 'positionY', -10, 10).name('Group Y').onChange((value) => {
-            planeGroup.position.y = value;
-        });
+    //     // Position Y
+    //     gui.add(planeGroupData, 'positionY', -10, 10).name('Group Y').onChange((value) => {
+    //         planeGroup.position.y = value;
+    //     });
 
-        // Position Z
-        gui.add(planeGroupData, 'positionZ', -10, 10).name('Group Z').onChange((value) => {
-            planeGroup.position.z = value;
-        });
+    //     // Position Z
+    //     gui.add(planeGroupData, 'positionZ', -10, 10).name('Group Z').onChange((value) => {
+    //         planeGroup.position.z = value;
+    //     });
 
-        gui.add(planeGroupData, 'rotationX', -10, Math.PI * 2).name('Rotation X').onChange((value) => {
-            planeGroup.rotation.x = value;
-        });
+    //     gui.add(planeGroupData, 'rotationX', -10, Math.PI * 2).name('Rotation X').onChange((value) => {
+    //         planeGroup.rotation.x = value;
+    //     });
 
-        // Rotation Y
-        gui.add(planeGroupData, 'rotationY', -10, Math.PI * 2).name('Rotation Y').onChange((value) => {
-            planeGroup.rotation.y = value;
-        });
+    //     // Rotation Y
+    //     gui.add(planeGroupData, 'rotationY', -10, Math.PI * 2).name('Rotation Y').onChange((value) => {
+    //         planeGroup.rotation.y = value;
+    //     });
 
-        // Rotation Z
-        gui.add(planeGroupData, 'rotationZ', -10, Math.PI * 2).name('Rotation Z').onChange((value) => {
-            planeGroup.rotation.z = value;
-        });
-    }
+    //     // Rotation Z
+    //     gui.add(planeGroupData, 'rotationZ', -10, Math.PI * 2).name('Rotation Z').onChange((value) => {
+    //         planeGroup.rotation.z = value;
+    //     });
+    // }
 
     /**raycater for plane interaction */
     const allArticles = document.querySelectorAll('article');

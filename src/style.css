@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Jersey+10&family=Matemasie&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -14,13 +15,19 @@
   font-style: normal;
 }
 
+* {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 100;
+  border-color: #deb7ff;
+}
+
 html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   background-color: #1c1c1c;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "soria", serif;
 }
 
 main::-webkit-scrollbar {
@@ -31,19 +38,13 @@ main {
   scroll-behavior: auto;
 }
 
-* {
-  /* font-family: 'KFOm'; */
-  font-family: 'KFOm';
-  border-color: #deb7ff;
-}
-
 body {
   overflow: hidden;
 }
 
 /* style.css */
 .gradient-text {
-  mix-blend-mode: difference !important;
+  mix-blend-mode: exclusion !important;
   background: linear-gradient(to top, #f8f9db, rgb(207, 207, 206)) !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
@@ -82,7 +83,7 @@ body {
 
 .char-span {
   display: inline-block;
-  transform: translateY("100%");
+  transform: translateY(100%);
   min-width: 0.2em;
 }
 
@@ -103,13 +104,15 @@ body {
   border-radius: 10%;
 }
 
-.spliting_text,
 .spliting_text>span {
   display: inline;
   opacity: 1;
   position: static;
 }
-
+.spliting_text{
+  position:absolute;
+  opacity: 1;
+}
 #skills {
   position: relative;
   height: 100%;
@@ -167,13 +170,16 @@ article .skills>span {
 
 .about-text span {
   will-change: auto;
-  height: 100%;
+  /* Shift visually using the outer span to avoid Chrome's background-clip + transform bug: */
+  /* transform: translateY(-50%); */
+}
+
+.about-text span .inner-word {
   background: linear-gradient(to right, #fffbfb, #f9f8f8, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* color: white; */
-  transform: translateY(-50%);
   will-change: auto;
 }
 

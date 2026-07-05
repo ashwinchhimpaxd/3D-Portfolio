@@ -1,9 +1,10 @@
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import TextSpliting from './TextSpliting.js';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 /** this is for smooth scrolling  */
 function smoothScrolling() {
   const mainEl = document.querySelector('.main');
@@ -65,18 +66,14 @@ function navbarAnimation() {
     for (let i = 0; i < 2; i++) {
       const row = document.createElement('div');
       row.classList.add(`text-row-${i + 1}`);
-
-      // Split text into characters
-      text.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.display = 'inline-block';
-        span.style.transform = 'translateY(0)'; // Initial position
-        span.classList.add('char-span');
-        row.appendChild(span);
-      });
-
+      row.textContent = text;
       wrapper.appendChild(row);
+
+      // Split text into characters using GSAP SplitText
+      const split = new SplitText(row, { type: "chars", tag: "span", charsClass: "char-span" });
+
+      // Clear any default stylesheet transforms on the split characters
+      gsap.set(split.chars, { transform: "translateY(0)", display: "inline-block" });
     }
 
     anker.appendChild(wrapper);
@@ -86,7 +83,6 @@ function navbarAnimation() {
     const row2Chars = wrapper.querySelector('.text-row-2').querySelectorAll('.char-span');
 
     anker.addEventListener("mouseenter", () => {
-
       gsap.to(row1Chars, {
         yPercent: -100,
         duration: 0.4,
@@ -95,7 +91,7 @@ function navbarAnimation() {
           each: 0.03,
           from: "start"
         }
-      })
+      });
       gsap.to(row2Chars, {
         yPercent: -100,
         duration: 0.4,
@@ -105,9 +101,9 @@ function navbarAnimation() {
           from: "start"
         }
       }, "<"); // Start at same time
-    })
-    anker.addEventListener("mouseleave", () => {
+    });
 
+    anker.addEventListener("mouseleave", () => {
       gsap.to(row1Chars, {
         yPercent: 0,
         duration: 0.4,
@@ -116,7 +112,7 @@ function navbarAnimation() {
           each: 0.03,
           from: "start"
         }
-      })
+      });
       gsap.to(row2Chars, {
         yPercent: 0,
         duration: 0.4,
@@ -126,7 +122,6 @@ function navbarAnimation() {
           from: "start"
         }
       }, "<");
-
     });
   });
 }
@@ -178,6 +173,17 @@ function aboutSectionAnimation() {
           each: 0.1
         }
       }, `-=${1.2}`); // start with previous animation
+
+    // If it's not the first slide, animate the previous slide's spans out of view
+    if (i > 0) {
+      const prevSpans = aboutImages[i - 1].querySelectorAll('.about-text>span');
+      tl.to(prevSpans, {
+        opacity: 0,
+        transform: "translateY(-100%)",
+        duration: 1.0,
+        ease: "power2.inOut"
+      }, `-=${1.5}`);
+    }
   })
 }
 
