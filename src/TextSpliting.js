@@ -36,6 +36,3 @@ export default function wrapWordsInSpan(elementclass, spanclass) {
         });
     });
 }
-
-
-

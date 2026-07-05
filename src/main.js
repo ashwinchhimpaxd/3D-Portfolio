@@ -1,9 +1,8 @@
 import './style.css';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from 'three/examples/jsm/Addons.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import GUI from 'lil-gui';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import TextSpliting from './TextSpliting.js';
@@ -17,7 +16,7 @@ let loadedPercent = 0;
 
 // 2. Update loader text
 loadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
-    loadedPercent = Math.round((itemsLoaded / itemsTotal) * 80); // 80% for 3D assets
+    loadedPercent = Math.round((itemsLoaded / itemsTotal) * 100); // 80% for 3D assets
     document.getElementById('loader-text').textContent = `Loading ${loadedPercent}%`;
 };
 
@@ -26,7 +25,7 @@ let threeReady = false;
 let htmlReady = false;
 
 const main = document.querySelector('.main');
-main.style.overflow = 'hidden';
+main.classList.add('overflow-hidden');
 function tryHideLoader() {
     if (threeReady && htmlReady) {
         setTimeout(() => {
@@ -388,8 +387,7 @@ if (document.querySelector('#as_a_canvas')) {
 }
 
 function second_section_canvas_scene() {
-    TextSpliting("skills")
-
+    document.fonts.ready.then(() => TextSpliting("skills"));
     // Scene Setup
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(33, window.innerWidth / window.innerHeight, 0.1, 1000);

@@ -45,7 +45,7 @@
     </nav>
 
     <section id="first-sec"
-      class="relative z-[2] none w-full min-h-full max-h-auto bg-[#171717] overflow-hidden flex flex-col justify-center items-center ">
+      class="relative z-[2]  w-full min-h-full max-h-auto bg-[#171717] overflow-hidden flex flex-col justify-center items-center ">
 
       <!-- Canvas Background -->
       <canvas id="as_a_canvas" class="absolute inset-0 z-10!"></canvas>
@@ -55,8 +55,7 @@
         class="text-box  text-amber-50! absolute top-0 z-10 flex flex-col items-end justify-end  pointer-events-none select-none w-full  h-full overflow-hidden px-[2vw] pb-[5vw] gap-[0.2vw]">
         <h1
           class="overflow-hidden text-[2vw] font-[600]  select-none capitalize flex flex-col leading-[1em] justify-end items-end  relative  ">
-          <span class="spliting_text  gradient-text mr-3 text-[5vw] font-[600]   z-[0]!"
-            id="first_heading_span_text">
+          <span class="spliting_text  gradient-text mr-3 text-[5vw] font-[600]   z-[0]!" id="first_heading_span_text">
             ashwin chhimpa
           </span>
           <span class="spliting_text text-[3vw] gradient-text " id="second_heading_span_text">
@@ -71,9 +70,9 @@
 
     </section>
 
-    <!-- About Section -->
+    <!-- skills Section -->
     <section id="skills"
-      class="min-h-full max-h-auto none  relative z-[2] w-full  bg-[#d8cfcf] overflow-hidden flex flex-col justify-center items-start ">
+      class="min-h-full max-h-auto    relative z-[2] w-full  bg-[#d8cfcf] overflow-hidden flex flex-col justify-center items-start ">
       <canvas id="as_a_canvas_two" class="absolute inset-0 z-0  "></canvas>
       <!-- Skills Section Container -->
       <div id="sec_two_skills_container"
@@ -172,7 +171,8 @@
       </div>
     </section>
 
-    <sectiom id="about" class="relative z-[2] w-full min-h-full max-h-auto bg-[#0b0b0b] overflow-hidden   select-none">
+    <!-- About section -->
+    <sectiom id="about" class="relative  w-full min-h-full max-h-auto bg-[#0b0b0b] overflow-hidden   select-none">
 
       <div class=" w-full h-full relative images-container bg-[#0b0b0b] ">
 
@@ -222,8 +222,189 @@
 
     </sectiom>
 
-    <section id="projects" class="w-full  min-h-full max-h-auto overflow-hidden relative bg-red-500">
-      <div id="projects-container">
+
+    <section id="projects" class="w-full min-h-screen h-auto relative">
+
+      <div id="projects-container" class="relative w-full flex flex-col ">
+        <!-- project heading and scroll -->
+        <div
+          class="project-sec-headings-scroller text-start w-full relative flex justify-between items-end px-3 pb-10 border-dotted border-b-2">
+          <aside class="section-heading leading-14 tracking-[4px]">
+            <h1 class="text-[5rem] font-bold uppercase">Work</h1>
+            <p class="text-[1.5rem] ml-[0.5em]">My projects</p>
+          </aside>
+          <aside class="scroller-indector text-[1.2em]">scroll</aside>
+        </div>
+
+
+        <!-- project shows  -->
+        <div class="all-project-shows w-full flex flex-col gap-24 md:gap-50 mt-16 md:mt-24">
+
+          <div id="Project_one"
+            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+              <h3
+                class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex text-nowrap items-center leading-none select-none font-sans ">
+                Ai powered note
+              </h3>
+
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+                style="font-family: 'Nunito', sans-serif;">
+                I designed and developed a media website to document my thoughts and ideas. The design focuses on a
+                modern aesthetic, with a slightly playful tone to reflect a media-style experience.
+              </p>
+
+              <a href="https://www.youtube.com" target="_blank"
+                class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
+                style="font-family: 'Nunito', sans-serif;">
+                <div
+                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  <div
+                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                  </div>
+                </div>
+                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">Launch
+                  Website</span>
+              </a>
+            </aside>
+
+            <aside class="w-full md:w-[40%]  flex justify-center items-center">
+              <div
+                class="w-full max-w-[400px]  aspect-[16/10] overflow-hidden rounded-xl shadow-lg border border-[#a455ff]/20 flex items-center justify-center bg-[#a455ff]/5">
+                <img src="./statics/images/about-images/thunder_storm.jpg"
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  alt="AI Powered Note Mockup">
+              </div>
+            </aside>
+          </div>
+
+          <div id="Project_two"
+            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+              <h3
+                class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex text-nowrap items-center leading-none select-none font-sans ">
+                Shader Image Transition
+              </h3>
+
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+                style="font-family: 'Nunito', sans-serif;">
+                I designed and developed a media website to document my thoughts and ideas. The design focuses on a
+                modern aesthetic, with a slightly playful tone to reflect a media-style experience.
+              </p>
+
+              <a href="https://glsl-shader-image-on-scroll-transit.vercel.app/" target="_blank"
+                class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
+                style="font-family: 'Nunito', sans-serif;">
+                <div
+                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  <div
+                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                  </div>
+                </div>
+                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">
+                  Live Website</span>
+              </a>
+            </aside>
+
+            <aside class="w-full md:w-[40%]  flex justify-center items-center">
+              <div
+                class="w-full max-w-[400px]  aspect-[16/10] overflow-hidden rounded-xl shadow-lg border border-[#a455ff]/20 flex items-center justify-center bg-[#a455ff]/5">
+                <img src="./statics/Project-images/Shaderimage.png"
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  alt="AI Powered Note Mockup">
+              </div>
+            </aside>
+          </div>
+
+
+          <div id="Project_three"
+            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+              <h3
+                class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex  items-center leading-none select-none font-sans ">
+                Cursor-Driven Image & Text Animation
+              </h3>
+
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+                style="font-family: 'Nunito', sans-serif;">
+                I designed and developed a media website to document my thoughts and ideas. The design focuses on a
+                modern aesthetic, with a slightly playful tone to reflect a media-style experience.
+              </p>
+
+              <a href="https://ashwinchhimpaxd.github.io/image-sliding-and-text-split-mouse-animation-/" target="_blank"
+                class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
+                style="font-family: 'Nunito', sans-serif;">
+                <div
+                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  <div
+                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                  </div>
+                </div>
+                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">live
+                  Website</span>
+              </a>
+            </aside>
+
+            <aside class="w-full md:w-[40%]  flex justify-center items-center">
+              <div
+                class="w-full max-w-[400px]  aspect-[16/10] overflow-hidden rounded-xl shadow-lg border border-[#a455ff]/20 flex items-center justify-center bg-[#a455ff]/5">
+                <img src="./statics/Project-images/imageslidingproject.png"
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  alt="AI Powered Note Mockup">
+              </div>
+            </aside>
+          </div>
+
+          <div id="Project_four"
+            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+              <h3
+                class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex  items-center leading-none select-none font-sans ">
+                Weather Forecast Application
+              </h3>
+
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+                style="font-family: 'Nunito', sans-serif;">
+                Get accurate weather updates for any location with real-time forecasts, detailed weather metrics
+                including wind speed, humidity, heat index, and a beautiful 7-day forecast view. Toggle between today's
+                weather, yesterday's data, and upcoming week predictions with an elegant dark/light mode interface.
+              </p>
+
+              <a href="https://ashwinchhimpaxd.github.io/weather-fetch-webpage/" target="_blank"
+                class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
+                style="font-family: 'Nunito', sans-serif;">
+                <div
+                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  <div
+                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                  </div>
+                </div>
+                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">live
+                  Website</span>
+              </a>
+            </aside>
+
+            <aside class="w-full md:w-[40%]  flex justify-center items-center">
+              <div
+                class="w-full max-w-[400px]  aspect-[16/10] overflow-hidden rounded-xl shadow-lg border border-[#a455ff]/20 flex items-center justify-center bg-[#a455ff]/5">
+                <img src="./statics/Project-images/weatherapp.png"
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  alt="AI Powered Note Mockup">
+              </div>
+            </aside>
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- project section -->
+    <section id="contant" class="w-full  min-h-full max-h-auto overflow-hidden relative ">
+      <div id="contant-container">
         <h1>Added Soon</h1>
       </div>
     </section>

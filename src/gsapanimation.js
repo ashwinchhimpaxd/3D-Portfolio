@@ -125,8 +125,6 @@ function navbarAnimation() {
     });
   });
 }
-navbarAnimation();
-
 
 /** about section images animation */
 function aboutSectionAnimation() {
@@ -187,4 +185,8 @@ function aboutSectionAnimation() {
   })
 }
 
-aboutSectionAnimation();
+// With:
+document.fonts.ready.then(() => {
+  navbarAnimation();
+  aboutSectionAnimation();
+});
