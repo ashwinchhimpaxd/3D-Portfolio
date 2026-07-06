@@ -191,8 +191,12 @@ article .skills>span {
   justify-content: flex-start;
   align-items: stretch;
   position: relative;
-  padding: 6rem 4rem 10rem 4rem;
+  padding: 6rem 4rem 0rem 4rem;
   box-sizing: border-box;
+}
+
+#projects-container::-webkit-scrollbar {
+  display: none;
 }
 
 #projects {
@@ -209,4 +213,8 @@ article .skills>span {
   color: rgb(255, 0, 0);
   font-family: "soria";
   font-size: 10em;
+}
+
+.all-project-wrapper-box>div {
+  width: calc(100vw - 8rem) !important;
 }

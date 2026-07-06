@@ -21,10 +21,10 @@
 
     <!-- Hero Section -->
     <nav
-      class="fixed top-[11%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-[99] min-w-[60vw] max-w-[40vw] text-white flex flex-row justify-between items-center pb-2 ">
+      class="fixed top-[11%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-[99] min-w-[60vw] max-w-[40vw]  flex flex-row justify-between items-center pb-2 ">
 
       <ul
-        class="nav-list-items text-[1.1em] font-[200]   flex flex-row justify-center items-center gap-5 uppercase mix-blend-difference! w-full text-amber-100 ">
+        class="nav-list-items text-[1.1em]   flex flex-row justify-center items-center gap-5 uppercase mix-blend-difference! w-full text-amber-100 ">
         <li class=" flex flex-col min-h-[1rem] w-fit px-1 overflow-hidden link-text">
           <a href="#first-sec" class="p-1  inline-block scroll-link   ">Home</a>
         </li>
@@ -45,7 +45,7 @@
     </nav>
 
     <section id="first-sec"
-      class="relative z-[2]  w-full min-h-full max-h-auto bg-[#171717] overflow-hidden flex flex-col justify-center items-center ">
+      class="relative z-[2]   w-full min-h-full max-h-auto bg-[#171717] overflow-hidden flex flex-col justify-center items-center ">
 
       <!-- Canvas Background -->
       <canvas id="as_a_canvas" class="absolute inset-0 z-10!"></canvas>
@@ -223,12 +223,12 @@
     </sectiom>
 
 
-    <section id="projects" class="w-full min-h-screen h-auto relative">
+    <section id="projects" class="w-full h-screen relative">
 
       <div id="projects-container" class="relative w-full flex flex-col ">
         <!-- project heading and scroll -->
         <div
-          class="project-sec-headings-scroller text-start w-full relative flex justify-between items-end px-3 pb-10 border-dotted border-b-2">
+          class="project-sec-headings-scroller text-start w-full relative flex justify-between items-end px-3  border-dotted border-b-2">
           <aside class="section-heading leading-14 tracking-[4px]">
             <h1 class="text-[5rem] font-bold uppercase">Work</h1>
             <p class="text-[1.5rem] ml-[0.5em]">My projects</p>
@@ -238,17 +238,18 @@
 
 
         <!-- project shows  -->
-        <div class="all-project-shows w-full flex flex-col gap-24 md:gap-50 mt-16 md:mt-24">
+        <div
+          class="all-project-wrapper-box w-fit flex flex-row flex-nowrap overflow-x-hidden gap-20 md:gap-50 mt-10 md:mt-24 pb-8">
 
           <div id="Project_one"
-            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
+            class="Projects-child flex flex-col-reverse md:flex-row shrink-0 w-full items-start justify-between gap-5 md:gap-16">
             <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
               <h3
                 class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex text-nowrap items-center leading-none select-none font-sans ">
                 Ai powered note
               </h3>
 
-              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal leading-8 opacity-95 max-w-2/2 h-full "
                 style="font-family: 'Nunito', sans-serif;">
                 I designed and developed a media website to document my thoughts and ideas. The design focuses on a
                 modern aesthetic, with a slightly playful tone to reflect a media-style experience.
@@ -258,12 +259,13 @@
                 class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
                 style="font-family: 'Nunito', sans-serif;">
                 <div
-                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  class="w-12 h-12 rounded-full border border-[#17141a] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#17141a]">
                   <div
-                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                    class="w-2.5 h-2.5 rounded-full bg-[#17141a] transition-all duration-300 group-hover:bg-[#ffffff]">
                   </div>
                 </div>
-                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">Launch
+                <span
+                  class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] group-hover:after:scale-x-100">Launch
                   Website</span>
               </a>
             </aside>
@@ -279,29 +281,45 @@
           </div>
 
           <div id="Project_two"
-            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
-            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+            class="Projects-child  flex  flex-col-reverse md:flex-row shrink-0 w-full items-start justify-between gap-10 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-5  text-start">
               <h3
                 class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex text-nowrap items-center leading-none select-none font-sans ">
                 Shader Image Transition
               </h3>
 
-              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal leading-8  opacity-95 max-w-2/2 h-full "
                 style="font-family: 'Nunito', sans-serif;">
-                I designed and developed a media website to document my thoughts and ideas. The design focuses on a
-                modern aesthetic, with a slightly playful tone to reflect a media-style experience.
+                An interactive 3D scroll-driven transition website using Three.js, GLSL Shaders, GSAP (ScrollTrigger),
+                and Lenis (Smooth Scroll). The website features stunning liquid displacement and water drop ripple
+                distortion transitions when scrolling between sections.
               </p>
 
+              <div class="sub-discription ">
+                <!-- <a href="www.youtube.com" type="button"></a> -->
+                <a href="https://github.com/ashwinchhimpaxd/GLSL-Shader-image-on-scroll-transition-effect.git"
+                  target="_blank" class="group relative inline-block ">
+                  <div
+                    class="relative  z-10 inline-flex h-10 items-center justify-center overflow-hidden rounded-md border border-neutral-800 bg-transparent px-4 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-active:translate-x-0 group-active:translate-y-0">
+                    Open-Source</div>
+                  <div
+                    class="absolute inset-0 z-0 h-full w-full rounded-md transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-hover:[box-shadow:5px_5px_#8500c1,10px_10px_#d4d4d4,15px_15px_#e5e5e5] group-active:translate-x-0 group-active:translate-y-0 group-active:shadow-none">
+                  </div>
+                </a>
+                <!-- <span
+                  class="border py-1 px-5 rounded-[10px]  text-[0.8rem] items-center hover:bg-[#808000] cursor-pointer">Open-Source</span> -->
+              </div>
               <a href="https://glsl-shader-image-on-scroll-transit.vercel.app/" target="_blank"
                 class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
                 style="font-family: 'Nunito', sans-serif;">
                 <div
-                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  class="w-12 h-12 rounded-full border border-[#17141a] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#17141a]">
                   <div
-                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                    class="w-2.5 h-2.5 rounded-full bg-[#17141a] transition-all duration-300 group-hover:bg-[#ffffff]">
                   </div>
                 </div>
-                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">
+                <span
+                  class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] group-hover:after:scale-x-100">
                   Live Website</span>
               </a>
             </aside>
@@ -316,31 +334,45 @@
             </aside>
           </div>
 
-
           <div id="Project_three"
-            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
-            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+            class=" Projects-child flex flex-col-reverse md:flex-row shrink-0 w-full items-start justify-between gap-12 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-8  text-start">
               <h3
-                class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex  items-center leading-none select-none font-sans ">
+                class="text-[6vw] md:text-[2vw] text-nowrap font-[800] uppercase tracking-tight flex  items-center leading-none select-none font-sans ">
                 Cursor-Driven Image & Text Animation
               </h3>
 
-              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal leading-8 opacity-95 max-w-2/2 h-full "
                 style="font-family: 'Nunito', sans-serif;">
-                I designed and developed a media website to document my thoughts and ideas. The design focuses on a
-                modern aesthetic, with a slightly playful tone to reflect a media-style experience.
+                This project shows a premium mouse-follow interaction: an infinite scrolling image strip tracks the
+                cursor while text lifts smoothly with dynamic wake effects—perfect for learning advanced frontend
+                animation and interaction design.
               </p>
-
+              <div class="sub-discription ">
+                <!-- <a href="www.youtube.com" type="button"></a> -->
+                <a href="https://github.com/ashwinchhimpaxd/image-sliding-and-text-split-mouse-animation-"
+                  target="_blank" class="group relative inline-block ">
+                  <div
+                    class="relative  z-10 inline-flex h-10 items-center justify-center overflow-hidden rounded-md border border-neutral-800 bg-transparent px-4 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-active:translate-x-0 group-active:translate-y-0">
+                    Open-Source</div>
+                  <div
+                    class="absolute inset-0 z-0 h-full w-full rounded-md transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-hover:[box-shadow:5px_5px_#8500c1,10px_10px_#d4d4d4,15px_15px_#e5e5e5] group-active:translate-x-0 group-active:translate-y-0 group-active:shadow-none">
+                  </div>
+                </a>
+                <!-- <span
+                  class="border py-1 px-5 rounded-[10px]  text-[0.8rem] items-center hover:bg-[#808000] cursor-pointer">Open-Source</span> -->
+              </div>
               <a href="https://ashwinchhimpaxd.github.io/image-sliding-and-text-split-mouse-animation-/" target="_blank"
                 class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
                 style="font-family: 'Nunito', sans-serif;">
                 <div
-                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  class="w-12 h-12 rounded-full border border-[#17141a] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#17141a]">
                   <div
-                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                    class="w-2.5 h-2.5 rounded-full bg-[#17141a] transition-all duration-300 group-hover:bg-[#ffffff]">
                   </div>
                 </div>
-                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">live
+                <span
+                  class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] group-hover:after:scale-x-100">live
                   Website</span>
               </a>
             </aside>
@@ -356,30 +388,30 @@
           </div>
 
           <div id="Project_four"
-            class="flex flex-col-reverse md:flex-row  w-full items-start justify-between gap-12 md:gap-16">
-            <aside class="w-full md:w-[45%]  flex flex-col gap-7  text-start">
+            class=" Projects-child flex flex-col-reverse md:flex-row shrink-0 w-full items-start justify-between gap-12 md:gap-16">
+            <aside class="w-full md:w-[45%]  flex flex-col gap-8  text-start">
               <h3
-                class="text-[6vw] md:text-[3vw] font-[800] uppercase tracking-tight flex  items-center leading-none select-none font-sans ">
+                class="text-[6vw] md:text-[2vw] text-nowrap font-[800] uppercase tracking-tight flex  items-center leading-none select-none font-sans ">
                 Weather Forecast Application
               </h3>
 
-              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  opacity-95 max-w-2/2 h-full "
+              <p class="text-[1.1rem] md:text-[1.6vw] font-normal  leading-8 opacity-95 max-w-2/2 h-full "
                 style="font-family: 'Nunito', sans-serif;">
-                Get accurate weather updates for any location with real-time forecasts, detailed weather metrics
-                including wind speed, humidity, heat index, and a beautiful 7-day forecast view. Toggle between today's
-                weather, yesterday's data, and upcoming week predictions with an elegant dark/light mode interface.
+                Get real-time weather updates, metrics (wind, humidity, heat index), and a beautiful 7-day forecast.
+                Easily toggle between today, yesterday, and weekly predictions in an elegant dark/light mode interface.
               </p>
 
               <a href="https://ashwinchhimpaxd.github.io/weather-fetch-webpage/" target="_blank"
                 class="flex items-center gap-4 group mt-6 w-fit select-none no-underline"
                 style="font-family: 'Nunito', sans-serif;">
                 <div
-                  class="w-12 h-12 rounded-full border border-[#a455ff] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#a455ff]">
+                  class="w-12 h-12 rounded-full border border-[#17141a] flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#17141a]">
                   <div
-                    class="w-2.5 h-2.5 rounded-full bg-[#a455ff] transition-all duration-300 group-hover:bg-[#F3F0E9]">
+                    class="w-2.5 h-2.5 rounded-full bg-[#17141a] transition-all duration-300 group-hover:bg-[#ffffff]">
                   </div>
                 </div>
-                <span class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300">live
+                <span
+                  class="text-[1.3rem] text-nowrap font-bold tracking-wide transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] group-hover:after:scale-x-100">live
                   Website</span>
               </a>
             </aside>
@@ -394,16 +426,13 @@
             </aside>
           </div>
 
-
         </div>
-
-
       </div>
     </section>
 
 
     <!-- project section -->
-    <section id="contant" class="w-full  min-h-full max-h-auto overflow-hidden relative ">
+    <section id="contant" class="w-full  min-h-full max-h-auto overflow-hidden relative bg-red-900 ">
       <div id="contant-container">
         <h1>Added Soon</h1>
       </div>

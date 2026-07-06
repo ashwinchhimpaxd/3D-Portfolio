@@ -185,8 +185,31 @@ function aboutSectionAnimation() {
   })
 }
 
+// this is for horizontal scroll for works section
+function projectsSectionAnimation() {
+  const wrapper = document.querySelector('.all-project-wrapper-box');
+  const sections = gsap.utils.toArray('.Projects-child');
+
+  if (!wrapper || sections.length === 0) return;
+
+  gsap.to(wrapper, {
+    x: () => -(wrapper.scrollWidth - window.innerWidth + 128), // 128px accounts for 4rem (64px) padding on left and right
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#projects",
+      scroller: ".main",
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      end: () => "+=" + (wrapper.scrollWidth - window.innerWidth + 128),
+      invalidateOnRefresh: true,
+    }
+  });
+}
+
 // With:
 document.fonts.ready.then(() => {
   navbarAnimation();
   aboutSectionAnimation();
+  projectsSectionAnimation();
 });
