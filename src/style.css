@@ -40,6 +40,12 @@ body {
   overflow: hidden;
 }
 
+  .disabled-link {
+    pointer-events: none; /* Stops mouse clicks */
+    cursor: default;       /* Removes pointer hand cursor */
+    opacity: 0.6;          /* Visual cue showing it is disabled */
+    color: gray;
+  }
 /* style.css */
 .gradient-text {
   mix-blend-mode: exclusion !important;
